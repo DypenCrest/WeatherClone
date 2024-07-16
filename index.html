@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DuccuWeather</title>
+    <link rel="stylesheet" href="./assets/styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="navbar">
+          <div class="nav-brand">
+            <svg
+              data-eager=""
+              xmlns="http://www.w3.org/2000/svg"
+              height="24"
+              viewBox="0 0 28 28"
+            >
+              <g fill="none">
+                <path
+                  fill="#F05514"
+                  d="M13.438 22.771c-5.14 0-9.338-4.196-9.338-9.336 0-5.14 4.197-9.304 9.338-9.304 5.141 0 9.306 4.197 9.306 9.304 0 5.172-4.165 9.336-9.306 9.336zm13.438-9.369-3.058-2.765 1.236-3.936-4.035-.878-.878-4.034-3.937 1.269L13.406 0 10.64 3.058 6.703 1.822l-.879 4.033-4.034.879 1.269 3.936L0 13.467l3.059 2.766-1.237 3.936 4.035.878.878 4.034 3.937-1.269 2.799 3.058 2.765-3.058 3.937 1.236.879-4.034 4.035-.91-1.27-3.937 3.06-2.765z"
+                ></path>
+                <path
+                  fill="#F05514"
+                  d="M7.549 7.58a8.328 8.328 0 0 1 11.779 0 8.323 8.323 0 0 1 0 11.775 8.328 8.328 0 0 1-11.78 0c-3.253-3.253-3.253-8.555 0-11.775"
+                ></path>
+              </g>
+            </svg>
+            <a href="index.html">DccuWeather</a>
+          </div>
+          <a
+            class="nav-city-link"
+            href="https://www.accuweather.com/en/np/kathmandu/241809/weather-forecast/241809"
+          >
+            <h6 class="header-loc">Kathmandu, Bagmati 27°c</h6>
+            <svg
+              data-src="/images/weathericons/7.svg"
+              viewBox="0 0 220 320"
+              width="27"
+              height="27"
+            >
+              <path
+                d="M264 157.15a57.5 57.5 0 0 0-57.5-57.5h-9.75c-18.372-21.63-47.985-30.027-74.977-21.26-26.99 8.767-46.018 32.963-48.173 61.26H61.55c-20.71 0-37.5 16.79-37.5 37.5s16.79 37.5 37.5 37.5h145c31.737-.028 57.45-25.763 57.45-57.5Z"
+                stroke="#BABABA"
+                stroke-width="10"
+                fill="none"
+                fill-rule="evenodd"
+              ></path>
+            </svg>
+          </a>
+          <div class="nav-search">
+            <svg
+              class="icon-search"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 30 25"
+            >
+              <path
+                transform="translate(3 3)"
+                d="M7.186 13.554c-3.462 0-6.303-2.869-6.303-6.359C.883 3.681 3.724.837 7.186.837c3.437 0 6.278 2.844 6.278 6.358 0 3.49-2.865 6.359-6.278 6.359zm5.323-1.602a7.176 7.176 0 0 0 1.815-4.757c0-3.968-3.2-7.195-7.138-7.195C3.223 0 0 3.227 0 7.195c0 3.944 3.223 7.171 7.186 7.171a7.058 7.058 0 0 0 4.75-1.84L17.427 18l.573-.55-5.49-5.498z"
+              ></path>
+            </svg>
+            <input
+              class="search-input"
+              type="text"
+              placeholder="Address, City or Zip Code"
+            />
+            <div class="location">
+              <span>Location</span>
+              <svg
+                class="icon-chevron arrow"
+                xmlns="http://www.w3.org/2000/svg"
+                width="10"
+                height="6"
+                viewBox="0 0 10 6"
+                role="img"
+                aria-labelledby="chevronSVG"
+              >
+                <title id="chevronSVG">Chevron down</title>
+                <path d="M10 .969L9.037 0 5 4.063.963 0 0 .969 5 6z"></path>
+              </svg>
+            </div>
+          </div>
+          <a href="https://www.accuweather.com/en/videos">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M17.0946 14.2044H0.75V1.5H17.0946V14.2044ZM16.2751 13.3847H1.56964V2.31948H16.2751V13.3847ZM7.4518 5.42938V10.2508L11.1643 7.8401L7.4518 5.42938ZM6.63216 3.91071L12.2491 7.55081V8.10528L6.63216 11.7696V3.91071Z"
+                fill="white"
+              ></path>
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M4.82422 16.5884H13.0207V15.7687H4.82422V16.5884Z"
+                fill="white"
+              ></path>
+            </svg>
+          </a>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+          >
+            <defs>
+              <path
+                id="svghamburger"
+                d="M10 12v1H0v-1h10zm6-6v1H0V6h16zm0-6v1H0V0h16z"
+              ></path>
+            </defs>
+            <use
+              fill="#FFF"
+              fill-rule="evenodd"
+              transform="matrix(-1 0 0 1 20 6)"
+              xlink:href="#svghamburger"
+            ></use>
+          </svg>
+        </div>
+      </nav>
+      <div class="subnav">
+        <a class="subnav-item active" href="index.html">
+          <h3>Today</h3>
+        </a>
+        <a
+          class="subnav-item"
+          href="https://www.accuweather.com/en/np/kathmandu/241809/hourly-weather-forecast/241809"
+        >
+          <span>Hourly</span>
+        </a>
+        <a
+          class="subnav-item"
+          href="https://www.accuweather.com/en/np/kathmandu/241809/daily-weather-forecast/241809"
+        >
+          <span>Daily</span>
+        </a>
+        <a
+          class="subnav-item"
+          href="https://www.accuweather.com/en/np/kathmandu/241809/weather-radar/241809"
+        >
+          <span>Radar</span>
+        </a>
+        <a
+          class="subnav-item"
+          href="https://www.accuweather.com/en/np/kathmandu/241809/minute-weather-forecast/241809"
+        >
+          <span>MinuteCast</span>
+        </a>
+        <a
+          class="subnav-item"
+          href="https://www.accuweather.com/en/np/kathmandu/241809/july-weather/241809"
+        >
+          <span>Monthly</span>
+        </a>
+        <a
+          class="subnav-item"
+          href="https://www.accuweather.com/en/np/kathmandu/241809/air-quality-index/241809"
+        >
+          <span>Air Quality</span>
+        </a>
+        <a
+          class="subnav-item"
+          href="https://www.accuweather.com/en/np/kathmandu/241809/health-activities/241809"
+        >
+          <span>Health &amp; Activities</span>
+        </a>
+        <a class="subnav-item" href="https://afb.accuweather.com">
+          <span>For Business</span>
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <div class="primary">
+        <div class="box">
+          <a
+            href="https://www.accuweather.com/en/np/kathmandu/241809/weather-today/241809"
+          >
+            <header>
+              <h5>TODAY'S WEATHER</h5>
+              <h5>SUN, JUL 14</h5>
+            </header>
+            <div class="contents">
+              <div style="display: flex; gap: 5px;">
+                <img
+                  height="22" 
+                  width="22"
+                  src="https://www.awxcdn.com/adc-assets/images/weathericons/15.svg"
+                />
+                <p>
+                  Plenty of clouds with widely separated thunderstorms; humid
+                  <b>Hi: 29°</b>
+                </p>
+              </div>
+              <div style="display: flex; gap: 5px;">
+                <img
+                  height="22"
+                  width="22"
+                  src="https://www.awxcdn.com/adc-assets/images/weathericons/15.svg"
+                />
+                <p>
+                  Tonight: A couple of evening showers and a thunderstorm;
+                  otherwise, humid with plenty of clouds <b>Lo: 21°</b>
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="box">
+          <a
+            href="https://www.accuweather.com/en/np/kathmandu/241809/current-weather/241809"
+          >
+            <header>
+              <h5>CURRENT WEATHER</h5>
+              <h5>15:55</h5>
+            </header>
+            <div class="contents">
+              <div class="temp-left">
+                <div>
+                  <div style="display: flex; gap: 1rem">
+                    <svg
+                      class="weather-icon"
+                      data-src="/images/weathericons/3.svg"
+                      viewBox="0 0 288 288"
+                      width="88"
+                      height="88"
+                    >
+                      <g stroke-width="9.593" fill="none" fill-rule="evenodd">
+                        <path
+                          d="M143.898 21v47.966M0 164.898h47.966M211.722 97.074l33.912-33.912M76.074 97.074 42.162 63.162M42.162 266.634l33.912-33.912M220.356 159.142c-2.666-35.73-29.7-64.861-65.133-70.183-35.433-5.322-69.833 14.581-82.878 47.952-13.045 33.37-1.264 71.327 28.384 91.446"
+                          stroke="#FF8700"
+                        ></path>
+                        <path
+                          d="M239.83 169.695h-7.53a52.763 52.763 0 0 0-92.958 28.78h-9.834c-15.894 0-28.78 12.885-28.78 28.78 0 15.894 12.886 28.779 28.78 28.779h110.323c23.841 0 43.169-19.328 43.169-43.17 0-23.841-19.328-43.17-43.17-43.17Z"
+                          stroke="#BABABA"
+                        ></path>
+                      </g>
+                    </svg>
+                    <div class="temp">29°<span>c</span></div>
+                  </div>
+                  <div>
+                    <h5>Partly sunny</h5>
+                    <h6>MORE DETAILS</h6>
+                  </div>
+                </div>
+
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>RealFeel Shade™</td>
+                      <td>29°</td>
+                    </tr>
+                    <tr>
+                      <td>Wind</td>
+                      <td>W 6 km/h</td>
+                    </tr>
+                    <tr>
+                      <td>Wind Gusts</td>
+                      <td>6 km/h</td>
+                    </tr>
+                    <tr>
+                      <td>Air Quality</td>
+                      <td>Fair</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="box">
+          <a
+            href="https://www.accuweather.com/en/np/kathmandu/241809/daily-weather-forecast/241809?day=3"
+          >
+            <header>
+              <h5>LOOKING AHEAD</h5>
+            </header>
+            <div class="contents">
+              <div>
+                <p>
+                  Thunderstorms in the area late on Monday night until Friday
+                  evening
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="box">
+          <a
+            href="https://www.accuweather.com/en/np/kathmandu/241809/daily-weather-forecast/241809?day=3"
+          >
+            <header>
+              <h5>KATHMANDU WEATHER RADAR</h5>
+            </header>
+            <div class="contents">
+              <div>
+                <iframe
+                  src="https://openweathermap.org/weathermap?basemap=map&cities=true&layer=temperature&lat=27.700769&lon=85.300140&zoom=10"
+                  width="600"
+                  height="450"
+                  frameborder="0"
+                >
+                </iframe>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="box">
+          <a
+            href="https://www.accuweather.com/en/np/kathmandu/241809/daily-weather-forecast/241809?day=3"
+          >
+            <header>
+              <h5>Air Quality</h5>
+              <h5>SEE MORE</h5>
+            </header>
+            <div class="contents">
+              <div class="end-contents">
+                <div class="air-quality">
+                  <div>
+                    <svg
+                      width="24"
+                      height="25"
+                      viewBox="5 0 24 25"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g clip-path="url(#clip0_4782_28057)">
+                        <path
+                          d="M6.75 6.16675C6.75 4.92411 7.75736 3.91675 9 3.91675H15C16.2426 3.91675 17.25 4.92411 17.25 6.16675V18.1667C17.25 19.4094 16.2426 20.4167 15 20.4167H9C7.75736 20.4167 6.75 19.4094 6.75 18.1667V6.16675Z"
+                          stroke="black"
+                          stroke-width="1.5"
+                        ></path>
+                        <path
+                          d="M11.25 8.41675L12.8991 7.53828C14.4959 6.68762 16.4223 6.73896 17.9716 7.67344V7.67344C19.5089 8.6007 21.4185 8.65888 23.0094 7.82695L24.75 6.91675"
+                          stroke="black"
+                          stroke-width="1.5"
+                        ></path>
+                        <path
+                          d="M11.25 12.9167L12.8991 12.0383C14.4959 11.1876 16.4223 11.239 17.9716 12.1734V12.1734C19.5089 13.1007 21.4185 13.1589 23.0094 12.3269L24.75 11.4167"
+                          stroke="black"
+                          stroke-width="1.5"
+                        ></path>
+                        <path
+                          d="M11.25 17.4167L12.8991 16.5383C14.4959 15.6876 16.4223 15.739 17.9716 16.6734V16.6734C19.5089 17.6007 21.4185 17.6589 23.0094 16.8269L24.75 15.9167"
+                          stroke="black"
+                          stroke-width="1.5"
+                        ></path>
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_4782_28057">
+                          <rect
+                            width="24"
+                            height="24"
+                            fill="white"
+                            transform="translate(0 0.166748)"
+                          ></rect>
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <span>Air Quality</span>
+                  </div>
+                  <span class="quality">Fair</span>
+                </div>
+                <p>
+                  The air quality is generally acceptable for most individuals.
+                  However, sensitive groups may experience minor to moderate
+                  symptoms from long-term exposure.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="box">
+          <a
+            href="https://www.accuweather.com/en/np/kathmandu/241809/daily-weather-forecast/241809?day=3"
+          >
+            <header>
+              <h5>ALLERGY OUTLOOK</h5>
+              <h5>SEE ALL</h5>
+            </header>
+            <div class="contents">
+              <div class="end-contents">
+                <div class="air-quality">
+                  <div>
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M11.3491 22.0558C10.1262 22.0558 9.01184 21.3852 8.44971 20.3596C8.20316 20.3892 7.95661 20.4089 7.71007 20.4089C4.76135 20.4089 2.3649 18.1012 2.3649 15.2609C2.3649 12.4207 4.76135 10.1032 7.71007 10.1032C7.91717 10.1032 8.12427 10.113 8.33137 10.1426C8.41026 10.1426 8.48916 10.1623 8.56805 10.1722C9.09074 10.2511 9.60356 10.4089 10.0769 10.6456L9.65287 11.5331C9.25839 11.3458 8.84419 11.2176 8.42013 11.1485L8.22289 11.1189C8.05523 11.0992 7.88758 11.0894 7.71007 11.0894C5.31362 11.0894 3.36095 12.9533 3.36095 15.2511C3.36095 17.5489 5.31362 19.4227 7.71007 19.4227C8.01579 19.4227 8.33137 19.3931 8.63709 19.3241L9.04143 19.2353L9.18936 19.6199C9.52466 20.4779 10.3925 21.0598 11.3491 21.0598C12.1972 21.0598 12.9763 20.616 13.3807 19.9059L13.5582 19.5903L13.9132 19.6692C14.3274 19.7678 14.7712 19.8172 15.215 19.8172C18.4103 19.8172 21.0138 17.3221 21.0138 14.255C21.0138 11.188 18.4103 8.6929 15.215 8.6929C14.4951 8.6929 13.7949 8.82111 13.1341 9.05779L12.789 8.13077C13.5582 7.84478 14.3767 7.69685 15.215 7.69685C18.9527 7.69685 22 10.6357 22 14.2452C22 17.8546 18.9527 20.7935 15.215 20.7935C14.8107 20.7935 14.4162 20.7639 14.0316 20.6949C13.4201 21.5331 12.4142 22.046 11.3393 22.046L11.3491 22.0558Z"
+                        fill="black"
+                      ></path>
+                      <path
+                        d="M7.19724 4.55089C7.19724 4.19586 6.91124 3.9 6.54635 3.9C6.18146 3.9 5.89546 4.186 5.89546 4.55089C5.89546 4.91578 6.18146 5.20178 6.54635 5.20178C6.91124 5.20178 7.19724 4.91578 7.19724 4.55089Z"
+                        fill="black"
+                      ></path>
+                      <path
+                        d="M5.24457 6.49369C5.24457 6.13866 4.95857 5.8428 4.59368 5.8428C4.22879 5.8428 3.94279 6.1288 3.94279 6.49369C3.94279 6.85858 4.22879 7.14458 4.59368 7.14458C4.95857 7.14458 5.24457 6.85858 5.24457 6.49369Z"
+                        fill="black"
+                      ></path>
+                      <path
+                        d="M8.49902 7.14458C8.85405 7.14458 9.1499 6.85858 9.1499 6.49369C9.1499 6.1288 8.86391 5.8428 8.49902 5.8428C8.13413 5.8428 7.84813 6.1288 7.84813 6.49369C7.84813 6.85858 8.13413 7.14458 8.49902 7.14458Z"
+                        fill="black"
+                      ></path>
+                      <path
+                        d="M3.30177 8.44635C3.30177 8.09132 3.01578 7.79546 2.65089 7.79546C2.286 7.79546 2 8.08146 2 8.44635C2 8.81124 2.286 9.09724 2.65089 9.09724C3.01578 9.09724 3.30177 8.81124 3.30177 8.44635Z"
+                        fill="black"
+                      ></path>
+                      <path
+                        d="M11.0927 8.44635C11.0927 8.09132 10.8067 7.79546 10.4418 7.79546C10.0769 7.79546 9.79092 8.08146 9.79092 8.44635C9.79092 8.81124 10.0769 9.09724 10.4418 9.09724C10.8067 9.09724 11.0927 8.81124 11.0927 8.44635Z"
+                        fill="black"
+                      ></path>
+                      <path
+                        d="M7.19724 8.44635C7.19724 8.09132 6.91124 7.79546 6.54635 7.79546C6.18146 7.79546 5.89546 8.08146 5.89546 8.44635C5.89546 8.81124 6.18146 9.09724 6.54635 9.09724C6.91124 9.09724 7.19724 8.81124 7.19724 8.44635Z"
+                        fill="black"
+                      ></path>
+                      <path
+                        d="M14.5049 17.0065C14.5049 17.3615 14.7909 17.6574 15.1558 17.6574C15.5207 17.6574 15.8067 17.3714 15.8067 17.0065C15.8067 16.6416 15.5207 16.3556 15.1558 16.3556C14.7909 16.3556 14.5049 16.6416 14.5049 17.0065Z"
+                        fill="black"
+                      ></path>
+                      <path
+                        d="M16.4477 15.0637C16.4477 15.4187 16.7337 15.7146 17.0986 15.7146C17.4635 15.7146 17.7495 15.4286 17.7495 15.0637C17.7495 14.6988 17.4635 14.4128 17.0986 14.4128C16.7337 14.4128 16.4477 14.6988 16.4477 15.0637Z"
+                        fill="black"
+                      ></path>
+                      <path
+                        d="M12.5523 15.0637C12.5523 15.4187 12.8383 15.7146 13.2031 15.7146C13.568 15.7146 13.854 15.4286 13.854 15.0637C13.854 14.6988 13.568 14.4128 13.2031 14.4128C12.8383 14.4128 12.5523 14.6988 12.5523 15.0637Z"
+                        fill="black"
+                      ></path>
+                      <path
+                        d="M18.4004 13.111C18.4004 13.4661 18.6864 13.7619 19.0513 13.7619C19.4162 13.7619 19.7022 13.4759 19.7022 13.111C19.7022 12.7462 19.4162 12.4602 19.0513 12.4602C18.6864 12.4602 18.4004 12.7462 18.4004 13.111Z"
+                        fill="black"
+                      ></path>
+                      <path
+                        d="M10.5996 13.111C10.5996 13.4661 10.8856 13.7619 11.2505 13.7619C11.6154 13.7619 11.9014 13.4759 11.9014 13.111C11.9014 12.7462 11.6154 12.4602 11.2505 12.4602C10.8856 12.4602 10.5996 12.7462 10.5996 13.111Z"
+                        fill="black"
+                      ></path>
+                      <path
+                        d="M14.5049 13.111C14.5049 13.4661 14.7909 13.7619 15.1558 13.7619C15.5207 13.7619 15.8067 13.4759 15.8067 13.111C15.8067 12.7462 15.5207 12.4602 15.1558 12.4602C14.7909 12.4602 14.5049 12.7462 14.5049 13.111Z"
+                        fill="black"
+                      ></path>
+                    </svg>
+                    <span>Dust & Dander</span>
+                  </div>
+                  <span class="dust">Extreme</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="secondary">
+        <header><h2>Top Stories</h2></header>
+        <div>
+          <a
+            class="side-contents"
+            href="https://www.accuweather.com/en/hurricane/anger-mounts-in-southeast-texas-as-crippling-power-outages-and-heat-turn-deadly/1668370"
+          >
+            <div>
+              <h5>Hurricane</h5>
+              <p>
+                Anger mounts in Texas as crippling power outages and heat turn
+                deadly
+              </p>
+
+              <span>1 day ago</span>
+            </div>
+            <img
+              alt="image"
+              src="https://cms.accuweather.com/wp-content/uploads/2024/07/cnn-L19jb21wb25lbnRzL2ltYWdlL2luc3RhbmNlcy9jbHlnczlpM2QwMDA4M2I2amEyMDJ2Z3F4-L19jb21wb25lbnRzL2FydGljbGUvaW5zdGFuY2VzL2NseWduM3UxdjAwMG5jMXA0Zno4OGM2NDI.jpg?w=64&amp;h=64&amp;crop=1"
+            />
+          </a>
+        </div>
+
+        <div>
+          <a
+            class="side-contents"
+            href="https://www.accuweather.com/en/hurricane/anger-mounts-in-southeast-texas-as-crippling-power-outages-and-heat-turn-deadly/1668370"
+          >
+            <div>
+              <h5>Hurricane</h5>
+              <p>
+                Anger mounts in Texas as crippling power outages and heat turn
+                deadly
+              </p>
+
+              <span>1 day ago</span>
+            </div>
+            <img
+              alt="image"
+              src="https://cms.accuweather.com/wp-content/uploads/2024/07/cnn-L19jb21wb25lbnRzL2ltYWdlL2luc3RhbmNlcy9jbHlnczlpM2QwMDA4M2I2amEyMDJ2Z3F4-L19jb21wb25lbnRzL2FydGljbGUvaW5zdGFuY2VzL2NseWduM3UxdjAwMG5jMXA0Zno4OGM2NDI.jpg?w=64&amp;h=64&amp;crop=1"
+            />
+          </a>
+        </div>
+
+        <div>
+          <a
+            class="side-contents"
+            href="https://www.accuweather.com/en/hurricane/anger-mounts-in-southeast-texas-as-crippling-power-outages-and-heat-turn-deadly/1668370"
+          >
+            <div>
+              <h5>Hurricane</h5>
+              <p>
+                Anger mounts in Texas as crippling power outages and heat turn
+                deadly
+              </p>
+
+              <span>1 day ago</span>
+            </div>
+            <img
+              alt="image"
+              src="https://cms.accuweather.com/wp-content/uploads/2024/07/cnn-L19jb21wb25lbnRzL2ltYWdlL2luc3RhbmNlcy9jbHlnczlpM2QwMDA4M2I2amEyMDJ2Z3F4-L19jb21wb25lbnRzL2FydGljbGUvaW5zdGFuY2VzL2NseWduM3UxdjAwMG5jMXA0Zno4OGM2NDI.jpg?w=64&amp;h=64&amp;crop=1"
+            />
+          </a>
+        </div>
+
+        <div>
+          <a
+            class="side-contents"
+            href="https://www.accuweather.com/en/hurricane/anger-mounts-in-southeast-texas-as-crippling-power-outages-and-heat-turn-deadly/1668370"
+          >
+            <div>
+              <h5>Hurricane</h5>
+              <p>
+                Anger mounts in Texas as crippling power outages and heat turn
+                deadly
+              </p>
+
+              <span>1 day ago</span>
+            </div>
+            <img
+              alt="image"
+              src="https://cms.accuweather.com/wp-content/uploads/2024/07/cnn-L19jb21wb25lbnRzL2ltYWdlL2luc3RhbmNlcy9jbHlnczlpM2QwMDA4M2I2amEyMDJ2Z3F4-L19jb21wb25lbnRzL2FydGljbGUvaW5zdGFuY2VzL2NseWduM3UxdjAwMG5jMXA0Zno4OGM2NDI.jpg?w=64&amp;h=64&amp;crop=1"
+            />
+          </a>
+        </div>
+
+        <div>
+          <a
+            class="side-contents"
+            href="https://www.accuweather.com/en/hurricane/anger-mounts-in-southeast-texas-as-crippling-power-outages-and-heat-turn-deadly/1668370"
+          >
+            <div>
+              <h5>Hurricane</h5>
+              <p>
+                Anger mounts in Texas as crippling power outages and heat turn
+                deadly
+              </p>
+
+              <span>1 day ago</span>
+            </div>
+            <img
+              alt="image"
+              src="https://cms.accuweather.com/wp-content/uploads/2024/07/cnn-L19jb21wb25lbnRzL2ltYWdlL2luc3RhbmNlcy9jbHlnczlpM2QwMDA4M2I2amEyMDJ2Z3F4-L19jb21wb25lbnRzL2FydGljbGUvaW5zdGFuY2VzL2NseWduM3UxdjAwMG5jMXA0Zno4OGM2NDI.jpg?w=64&amp;h=64&amp;crop=1"
+            />
+          </a>
+        </div>
+
+        <div class="contents">
+          <a href="https://www.accuweather.com/en/weather-news">
+            <h6>More Stories</h6>
+          </a>
+        </div>
+
+        <header><h2>Featured Stories</h2></header>
+        <div>
+          <a
+            class="side-contents"
+            href="https://www.accuweather.com/en/hurricane/anger-mounts-in-southeast-texas-as-crippling-power-outages-and-heat-turn-deadly/1668370"
+          >
+            <div>
+              <h5>WEATHER NEWS</h5>
+              <p>World’s biggest indoor snow and ice park opens in China</p>
+
+              <span>1 day ago</span>
+            </div>
+            <img
+              alt="image"
+              src="https://cms.accuweather.com/wp-content/uploads/2024/07/cnn-L19jb21wb25lbnRzL2ltYWdlL2luc3RhbmNlcy9jbHllMWh5cTUwMDBlM2I2a2RseW5mc291-L19jb21wb25lbnRzL2FydGljbGUvaW5zdGFuY2VzL2NseWUxZXlmZzAwMG5hM3FqOGZ5NWRxMDc.jpg?w=64&h=64&crop=1"
+            />
+          </a>
+        </div>
+        <div>
+          <a
+            class="side-contents"
+            href="https://www.accuweather.com/en/hurricane/anger-mounts-in-southeast-texas-as-crippling-power-outages-and-heat-turn-deadly/1668370"
+          >
+            <div>
+              <h5>WEATHER NEWS</h5>
+              <p>World’s biggest indoor snow and ice park opens in China</p>
+
+              <span>1 day ago</span>
+            </div>
+            <img
+              alt="image"
+              src="https://cms.accuweather.com/wp-content/uploads/2024/07/cnn-L19jb21wb25lbnRzL2ltYWdlL2luc3RhbmNlcy9jbHllMWh5cTUwMDBlM2I2a2RseW5mc291-L19jb21wb25lbnRzL2FydGljbGUvaW5zdGFuY2VzL2NseWUxZXlmZzAwMG5hM3FqOGZ5NWRxMDc.jpg?w=64&h=64&crop=1"
+            />
+          </a>
+        </div>
+        <div>
+          <a
+            class="side-contents"
+            href="https://www.accuweather.com/en/hurricane/anger-mounts-in-southeast-texas-as-crippling-power-outages-and-heat-turn-deadly/1668370"
+          >
+            <div>
+              <h5>WEATHER NEWS</h5>
+              <p>World’s biggest indoor snow and ice park opens in China</p>
+
+              <span>1 day ago</span>
+            </div>
+            <img
+              alt="image"
+              src="https://cms.accuweather.com/wp-content/uploads/2024/07/cnn-L19jb21wb25lbnRzL2ltYWdlL2luc3RhbmNlcy9jbHllMWh5cTUwMDBlM2I2a2RseW5mc291-L19jb21wb25lbnRzL2FydGljbGUvaW5zdGFuY2VzL2NseWUxZXlmZzAwMG5hM3FqOGZ5NWRxMDc.jpg?w=64&h=64&crop=1"
+            />
+          </a>
+        </div>
+        <div>
+          <a
+            class="side-contents"
+            href="https://www.accuweather.com/en/hurricane/anger-mounts-in-southeast-texas-as-crippling-power-outages-and-heat-turn-deadly/1668370"
+          >
+            <div>
+              <h5>WEATHER NEWS</h5>
+              <p>World’s biggest indoor snow and ice park opens in China</p>
+
+              <span>1 day ago</span>
+            </div>
+            <img
+              alt="image"
+              src="https://cms.accuweather.com/wp-content/uploads/2024/07/cnn-L19jb21wb25lbnRzL2ltYWdlL2luc3RhbmNlcy9jbHllMWh5cTUwMDBlM2I2a2RseW5mc291-L19jb21wb25lbnRzL2FydGljbGUvaW5zdGFuY2VzL2NseWUxZXlmZzAwMG5hM3FqOGZ5NWRxMDc.jpg?w=64&h=64&crop=1"
+            />
+          </a>
+        </div>
+        <div>
+          <a
+            class="side-contents"
+            href="https://www.accuweather.com/en/hurricane/anger-mounts-in-southeast-texas-as-crippling-power-outages-and-heat-turn-deadly/1668370"
+            style="border-radius: 0 0 6px 6px"
+          >
+            <div>
+              <h5>WEATHER NEWS</h5>
+              <p>World’s biggest indoor snow and ice park opens in China</p>
+
+              <span>1 day ago</span>
+            </div>
+            <img
+              alt="image"
+              src="https://cms.accuweather.com/wp-content/uploads/2024/07/cnn-L19jb21wb25lbnRzL2ltYWdlL2luc3RhbmNlcy9jbHllMWh5cTUwMDBlM2I2a2RseW5mc291-L19jb21wb25lbnRzL2FydGljbGUvaW5zdGFuY2VzL2NseWUxZXlmZzAwMG5hM3FqOGZ5NWRxMDc.jpg?w=64&h=64&crop=1"
+            />
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-box">
+        <div>
+          <!-- bootstrap icon used -->
+          <a href="https://www.facebook.com/Dipen.donot.access/" target="_blank"
+            ><i class="bi bi-facebook"></i
+          ></a>
+          <a href="https://www.instagram.com/crest_dipen/" target="_blank"
+            ><i class="bi bi-instagram"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/dipen-shrestha-524508217/?originalSubdomain=np"
+            target="_blank"
+            ><i class="bi bi-linkedin"></i
+          ></a>
+        </div>
+        <p>
+          &copy; 2024 DccuWeather, Inc. "DccuWeather" and sun design are
+          registered trademarks of DccuWeather, Inc. All Rights Reserved.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
